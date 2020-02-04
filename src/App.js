@@ -1,11 +1,13 @@
 import React from 'react';
-import HomePage from './pages/homepage/homepage.component';
+
+import { Routes } from './routes';
+
 import './App.css';
 
 const App = () => {
   return (
     <div className='App'>
-      <HomePage />
+      <Routes />
     </div>
   );
 };
