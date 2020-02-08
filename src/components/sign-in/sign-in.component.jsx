@@ -25,6 +25,10 @@ class SignIn extends React.Component {
     this.setState({ email: '', password: '' });
   };
 
+  getDataFromGoogle = () => {
+    signInWithGoogle().then(res => console.log(res));
+  };
+
   render() {
     const { email, password } = this.state;
 
@@ -50,10 +54,12 @@ class SignIn extends React.Component {
             label='password'
             required
           />
-          <CustomeButton type='submit'>Sign in</CustomeButton>
-          <CustomeButton onClick={signInWithGoogle}>
-            Sign in with Google
-          </CustomeButton>
+          <div className='buttons'>
+            <CustomeButton type='submit'>Sign in</CustomeButton>
+            <CustomeButton onClick={signInWithGoogle} isGoogleSignin>
+              Sign in with Google
+            </CustomeButton>
+          </div>
         </form>
       </div>
     );
