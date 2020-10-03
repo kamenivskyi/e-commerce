@@ -23,13 +23,16 @@
   }
 
   .quantity {
-    padding-left: 20px;
+    .value {
+      padding: 0 10px;
+    }
   }
 
-  .remove-button {
+  .remove-button,
+  .arrow {
+    font-size: 20px;
     border: none;
     background: transparent;
-    font-size: 20px;
     cursor: pointer;
   }
 }

@@ -1,5 +1,6 @@
+import { act } from 'react-dom/test-utils';
 import Types from './cart.types';
-import { addItemToCart } from './cart.utils';
+import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
@@ -18,7 +19,12 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
       };
-    case Types.DELETE_ITEM_FROM_CART:
+    case Types.REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
+      };
+    case Types.CLEAR_ITEM_FROM_CART:
       return {
         ...state,
         cartItems: state.cartItems.filter(
