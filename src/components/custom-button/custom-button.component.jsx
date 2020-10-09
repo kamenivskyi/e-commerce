@@ -6,14 +6,14 @@ const CustomButton = ({
   children,
   isGoogleSignin,
   inverted,
-  type,
+  type = 'button',
   ...otherProps
 }) => (
   <button
     className={`${inverted ? 'inverted' : ''} ${
       isGoogleSignin ? 'google-sign-in' : ''
     } custom-button`}
-    type={type || 'button'}
+    type={type}
     {...otherProps}
   >
     {children}
