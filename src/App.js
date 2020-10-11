@@ -14,7 +14,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { setCurrentUser } from './redux/user/user.actions';
 
-import './App.css';
+import './app.styles.css';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -57,8 +57,8 @@ class App extends React.Component {
               this.props.currentUser ? (
                 <Redirect to='/' />
               ) : (
-                <SignInAndSignUpPage />
-              )
+                  <SignInAndSignUpPage />
+                )
             }
           />
         </Switch>
